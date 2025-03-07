@@ -2,8 +2,9 @@
   "name": "job-search-app",
   "version": "1.0.0",
   "description": "Job Search Application",
-  "type": "module",
   "main": "index.js",
+  "type": "module",
+  "engines":{"node":"22.11.0"},
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js"
