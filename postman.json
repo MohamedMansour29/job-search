@@ -1,0 +1,199 @@
+{
+  "info": {
+    "name": "Job Search App"
+  },
+  "item": [
+    {
+      "name": "Auth APIs",
+      "item": [
+        {
+          "name": "Register",
+          "request": {
+            "method": "POST",
+            "body": {
+              "raw": "{\n  \"email\": \"ahmed@gmail.com\",\n  \"password\": \"123456\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/auth/register"
+            }
+          }
+        },
+        {
+          "name": "Confirm OTP",
+          "request": {
+            "method": "POST",
+            "body": {
+              "raw": "{\n  \"userId\": \"64f1a2b3c7e6f8a1b2c3d4e5\",\n  \"code\": \"123456\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/auth/confirm-otp"
+            }
+          }
+        },
+        {
+          "name": "Login",
+          "request": {
+            "method": "POST",
+            "body": {
+              "raw": "{\n  \"email\": \"ahmed@gmail.com\",\n  \"password\": \"123456\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/auth/login"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "User APIs",
+      "item": [
+        {
+          "name": "Update User",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer <access_token>"
+              }
+            ],
+            "body": {
+              "raw": "{\n  \"firstName\": \"Ahmed\",\n  \"lastName\": \"Mohamed\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/user/64f1a2b3c7e6f8a1b2c3d4e5"
+            }
+          }
+        },
+        {
+          "name": "Get User",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer <access_token>"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:3000/user/64f1a2b3c7e6f8a1b2c3d4e5"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Company APIs",
+      "item": [
+        {
+          "name": "Add Company",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer <access_token>"
+              }
+            ],
+            "body": {
+              "raw": "{\n  \"name\": \"MisrTech\",\n  \"description\": \"A leading tech company in Egypt\",\n  \"industry\": \"Technology\",\n  \"address\": \"Cairo, Egypt\",\n  \"employeeCount\": \"500+\",\n  \"email\": \"info@misrtech.com\",\n  \"createdBy\": \"64f1a2b3c7e6f8a1b2c3d4e5\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/company"
+            }
+          }
+        },
+        {
+          "name": "Get Company Jobs",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer <access_token>"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:3000/company/64f1a2b3c7e6f8a1b2c3d4e5/jobs"            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Job APIs",
+      "item": [
+        {
+          "name": "Add Job",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer <access_token>"
+              }
+            ],
+            "body": {
+              "raw": "{\n  \"title\": \"Software Engineer\",\n  \"location\": \"remote\",\n  \"type\": \"full-time\",\n  \"level\": \"mid\",\n  \"description\": \"We are looking for a skilled software engineer.\",\n  \"techSkills\": [\"JavaScript\", \"Node.js\", \"React\"],\n  \"softSkills\": [\"Teamwork\", \"Communication\"],\n  \"addedBy\": \"64f1a2b3c7e6f8a1b2c3d4e5\",\n  \"companyId\": \"64f1a2b3c7e6f8a1b2c3d4e5\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/job"
+            }
+          }
+        },
+        {
+          "name": "Get Jobs",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer <access_token>"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:3000/job"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Message APIs",
+      "item": [
+        {
+          "name": "Send Message",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer <access_token>"
+              }
+            ],
+            "body": {
+              "raw": "{\n  \"sender\": \"64f1a2b3c7e6f8a1b2c3d4e5\",\n  \"receiver\": \"64f1a2b3c7e6f8a1b2c3d4e6\",\n  \"content\": \"Hello, how are you?\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/message/send"
+            }
+          }
+        },
+        {
+          "name": "Get Messages",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer <access_token>"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:3000/message/64f1a2b3c7e6f8a1b2c3d4e5/64f1a2b3c7e6f8a1b2c3d4e6"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
